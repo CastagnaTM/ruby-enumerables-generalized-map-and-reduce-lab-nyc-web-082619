@@ -16,6 +16,7 @@ end
     	sum = yield(array[i], sum)
       if array[i] == true
         return true
+      end
       i += 1
     end
     return sum
