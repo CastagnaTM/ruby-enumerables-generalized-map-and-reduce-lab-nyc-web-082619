@@ -15,13 +15,20 @@ end
     result = false
     while i < array.length do
     	sum = yield(array[i], sum)
-      if array[i] == true
-        result = true
-			elsif array[i] == false
-				result = false
+			if array[i] != nil
+      	if array[i] == true
+        	result = true
+				elsif array[i] == false
+					result = false
+				end
       end
       i += 1
     end
-    return result
+	   if result == false || result == true
+       return result
+	    else
+		   return sum
+	    end
   end
+
   reduce([1,2,3]){ |x, n| x + n }
