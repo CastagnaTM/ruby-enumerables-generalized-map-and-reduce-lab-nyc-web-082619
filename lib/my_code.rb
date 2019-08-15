@@ -15,11 +15,9 @@ end
     while i < array.length do
     	sum = yield(array[i], sum)
       if array[i] == true
-        neutral = true
-      end
+        return true
       i += 1
     end
-    return neutral
     return sum
   end
     reduce([1,2,3]){ |x, n| x + n }
