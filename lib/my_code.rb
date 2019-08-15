@@ -8,17 +8,20 @@ def map (array, num = 1)
   return new_a
 end
 	map ([1,2,3]){|value, multiple| value *= multiple}
+
   def reduce (array, starting_point = 0)
     i = 0
   	sum = starting_point
-    neutral = false
+    result = false
     while i < array.length do
     	sum = yield(array[i], sum)
       if array[i] == true
-        return true
+        result = true
+			elsif array[i] == false
+				result = false
       end
       i += 1
     end
-    return sum
+    return result
   end
-    reduce([1,2,3]){ |x, n| x + n }
+  reduce([1,2,3]){ |x, n| x + n }
