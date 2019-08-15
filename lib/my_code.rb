@@ -12,7 +12,7 @@ end
   def reduce (array, starting_point = 0)
     i = 0
   	sum = starting_point
-    result = false
+    result = nil
     while i < array.length do
     	sum = yield(array[i], sum)
 			if array[i] != nil
